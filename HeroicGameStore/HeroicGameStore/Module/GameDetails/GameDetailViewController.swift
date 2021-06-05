@@ -22,7 +22,6 @@ protocol GameDetailViewInterface: AnyObject {
     func prepareInformations(titles: [String], descriptions: [String])
     func prepareWebView()
     func reloadData()
-    
 }
 
 final class GameDetailViewController: UIViewController {
@@ -79,6 +78,13 @@ extension GameDetailViewController: UITableViewDelegate {
         }
         if indexPath.section == 0 {
             selectedRow.toggle()
+            let cell = tableView.dequeueReusableCell(withIdentifier: DescritionsTableViewCell.reuseIdentifier, for: indexPath) as! DescritionsTableViewCell
+            if selectedRow {
+                cell.descriptionTextLabel.numberOfLines = 0
+            }
+            else{
+                    cell.descriptionTextLabel.numberOfLines = 4
+            }
             self.tableView.reloadData()
         }
     }
@@ -105,14 +111,7 @@ extension GameDetailViewController: UITableViewDataSource {
                 case 0:
                     let cell = tableView.dequeueReusableCell(withIdentifier: DescritionsTableViewCell.reuseIdentifier, for: indexPath) as! DescritionsTableViewCell
                     cell.configure(description: descriptionText)
-                    if selectedRow {
-                        cell.descriptionTextLabel.numberOfLines = 0
-                        return cell
-                    }
-                    else {
-                        cell.descriptionTextLabel.numberOfLines = 4
-                        return cell
-                    }
+                    return cell
                 case 1:
                     let cell = tableView.dequeueReusableCell(withIdentifier: InformationTableViewCell.reuseIdentifier, for: indexPath) as! InformationTableViewCell
                     cell.configure(title: informationType[indexPath.row], description: descriptionsForInfos[indexPath.row])
@@ -159,7 +158,7 @@ extension GameDetailViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             if selectedRow {
-                return CGFloat(Double(descriptionText.count) / 2.75)
+                return CGFloat(Double(descriptionText.count) / 2.5)
             }
             return 113
         case 1:
@@ -195,7 +194,6 @@ extension GameDetailViewController: GameDetailViewInterface {
     func prepareWebView() {
         //to-do
     }
-    
     func showGameDetail(with model: GameDetailModel) {
         DispatchQueue.main.async {
                 if UserDefaults.exists(key:"id") {
@@ -219,7 +217,11 @@ extension GameDetailViewController: GameDetailViewInterface {
             self.descriptionsForInfos = tableViewData!.descriptions
             self.tableView.reloadData()
             self.model = model
-            guard let metacritic = model.metacritic else {return}
+            guard let metacritic = model.metacritic else {
+                self.metacriticBackgroundView.layer.borderColor = UIColor(hex:"#FE0500FF" )?.cgColor
+                self.metacriticLabel.textColor = UIColor(hex:"#FE0500FF" )
+                return
+            }
             switch metacritic {
             case 75...100 :
                 self.metacriticBackgroundView.layer.borderColor = UIColor(hex:"#5DC534FF" )?.cgColor
@@ -319,8 +321,8 @@ extension GameDetailViewController: GameDetailViewInterface {
         metacriticLabel.translatesAutoresizingMaskIntoConstraints = false
         topView.addSubview(metacriticLabel)
         NSLayoutConstraint.activate([
-            metacriticLabel.rightAnchor.constraint(equalTo: metacriticBackgroundView.rightAnchor,constant: -6),
-            metacriticLabel.leftAnchor.constraint(equalTo: metacriticBackgroundView.leftAnchor,constant: 6),
+            metacriticLabel.rightAnchor.constraint(equalTo: metacriticBackgroundView.rightAnchor,constant: -4),
+            metacriticLabel.leftAnchor.constraint(equalTo: metacriticBackgroundView.leftAnchor,constant: 4),
             metacriticLabel.topAnchor.constraint(equalTo: metacriticBackgroundView.topAnchor, constant: 3),
             metacriticLabel.bottomAnchor.constraint(equalTo: metacriticBackgroundView.bottomAnchor,constant: -3)
         ])

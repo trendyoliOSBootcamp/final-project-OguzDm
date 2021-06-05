@@ -14,14 +14,11 @@ class InformationTableViewCell: UITableViewCell {
     @IBOutlet weak var informationDescriptionLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         contentView.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.1137254902, blue: 0.1137254902, alpha: 1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configure(title: String, description: String) {
