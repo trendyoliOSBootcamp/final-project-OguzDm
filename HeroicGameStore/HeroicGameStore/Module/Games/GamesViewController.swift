@@ -104,13 +104,13 @@ extension GamesViewController : UICollectionViewDelegate {
             else {
             let selectedCell = platformsCollectionView.cellForItem(at: indexPath) as! ParentPlatformsCollectionViewCell
             if presenter.selectedIndex == indexPath.item{
-                selectedCell.platformsBackgroundView.backgroundColor = UIColor(displayP3Red: 45/256, green: 45/256, blue: 45/256, alpha: 1.0)
-                selectedCell.platformsTextLabel.textColor = .white
+//                selectedCell.platformsBackgroundView.backgroundColor = UIColor(displayP3Red: 45/256, green: 45/256, blue: 45/256, alpha: 1.0)
+//                selectedCell.platformsTextLabel.textColor = .white
                 presenter.fetchMainGames()
                 
             }else {
-                selectedCell.platformsBackgroundView.backgroundColor = .white
-                selectedCell.platformsTextLabel.textColor = UIColor(displayP3Red: 45/256, green: 45/256, blue: 45/256, alpha: 1.0)
+//                selectedCell.platformsBackgroundView.backgroundColor = .white
+//                selectedCell.platformsTextLabel.textColor = UIColor(displayP3Red: 45/256, green: 45/256, blue: 45/256, alpha: 1.0)
                 presenter.fetchWithFilter(query: "&parent_platforms=\(indexPath.item + 1)")
             }
             presenter.selectedIndex = indexPath.item

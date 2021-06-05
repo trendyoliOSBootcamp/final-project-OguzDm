@@ -210,8 +210,17 @@ extension GameDetailViewController: GameDetailViewInterface {
                 else {
                     self.wishListButton.tintColor = UIColor(hex: "#1D1D1DFF")
                 }
+            self.metacriticLabel.text = String(model.metacritic ?? 0)
+            self.gameImageView.kf.setImage(with: URL(string: model.background_image))
+            self.descriptionText = model.description_raw
+            self.nameLabel.text = model.name
+            let tableViewData = self.presenter?.setTableViewData()
+            self.informationType = tableViewData!.titles
+            self.descriptionsForInfos = tableViewData!.descriptions
+            self.tableView.reloadData()
             self.model = model
-            switch model.metacritic {
+            guard let metacritic = model.metacritic else {return}
+            switch metacritic {
             case 75...100 :
                 self.metacriticBackgroundView.layer.borderColor = UIColor(hex:"#5DC534FF" )?.cgColor
                 self.metacriticLabel.textColor = UIColor(hex:"#5DC534FF" )
@@ -222,15 +231,6 @@ extension GameDetailViewController: GameDetailViewInterface {
                 self.metacriticBackgroundView.layer.borderColor = UIColor(hex:"#FE0500FF" )?.cgColor
                 self.metacriticLabel.textColor = UIColor(hex:"#FE0500FF" )
             }
-            self.metacriticLabel.text = String(model.metacritic)
-            self.gameImageView.kf.setImage(with: URL(string: model.background_image))
-            self.descriptionText = model.description_raw
-            self.nameLabel.text = model.name
-            let tableViewData = self.presenter?.setTableViewData()
-            self.informationType = tableViewData!.titles
-            self.descriptionsForInfos = tableViewData!.descriptions
-            self.tableView.reloadData()
-       
         }
     }
     

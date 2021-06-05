@@ -40,7 +40,7 @@ class MainGamesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 33
+        return 30
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

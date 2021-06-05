@@ -32,7 +32,7 @@ final class MainGamesCollectionViewCellPresenter {
         view?.prepareNameLabel(with: name)
     }
     private func setImage() {
-        let imageURL = game.background_image
+        guard let imageURL = game.background_image else {return}
         view?.prepareGameImage(with: imageURL)
     }
     private func setMetaCriticLabel(){

@@ -29,7 +29,7 @@ final class SmallCardCollectionViewCellPresenter {
     }
     
     private func setImage() {
-        let imageURL = game.background_image
+        guard let imageURL = game.background_image else {return}
         view?.prepareGameImage(with: imageURL)
     }
     private func setNameLabel(){

@@ -29,7 +29,7 @@ struct HeroicResult: Codable,Equatable {
     let name: String
     let metacritic: Int?
     let released: String?
-    let background_image: String
+    let background_image: String?
     let playtime: Int
     let parent_platforms: [ParentPlatform]?
     let genres: [Genre]?

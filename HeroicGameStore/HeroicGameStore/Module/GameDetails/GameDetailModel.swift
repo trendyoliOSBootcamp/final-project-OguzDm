@@ -10,7 +10,7 @@ import Foundation
 struct GameDetailModel: Codable {
     let id: Int
     let name: String
-    let metacritic: Int
+    let metacritic: Int?
     let website: String
     let background_image: String
     let description_raw: String
