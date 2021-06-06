@@ -34,7 +34,5 @@ extension GamesRouter: GamesRouterInterface {
         let gameDetailVC = GameDetailRouter.createModule(with: id)
         self.navigationController?.pushViewController(gameDetailVC, animated: true)
     }
-    
-    
 }
 

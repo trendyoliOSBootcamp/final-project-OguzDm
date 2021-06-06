@@ -113,7 +113,7 @@ extension MainGamesCollectionViewCellPresenter: MainGamesCollectionViewCellPrese
     var numberOfCell: Int {
         if numberOfItems > 3 {
             return 4
-        }else{
+        } else {
             return numberOfItems
         }
     }
@@ -159,7 +159,6 @@ extension MainGamesCollectionViewCellPresenter: MainGamesCollectionViewCellPrese
         setMetacriticColor()
         view?.reloadTableView()
         view?.reloadCollectionView()
-        
     }
     
     func wishListButtonTapped() {

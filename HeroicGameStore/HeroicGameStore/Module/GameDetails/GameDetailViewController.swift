@@ -158,7 +158,7 @@ extension GameDetailViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             if selectedRow {
-                return CGFloat(Double(descriptionText.count) / 2.5)
+                return CGFloat(Double(descriptionText.count) / 2.7)
             }
             return 113
         case 1:

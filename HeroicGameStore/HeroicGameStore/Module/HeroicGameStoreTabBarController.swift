@@ -11,8 +11,6 @@ class HeroicGameStoreTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         tabBar.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.1137254902, blue: 0.1137254902, alpha: 1)
         tabBar.barTintColor = #colorLiteral(red: 0.1137254902, green: 0.1137254902, blue: 0.1137254902, alpha: 1)
         tabBar.unselectedItemTintColor = .white.withAlphaComponent(0.5)

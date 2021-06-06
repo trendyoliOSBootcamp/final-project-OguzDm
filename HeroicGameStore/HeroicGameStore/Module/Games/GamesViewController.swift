@@ -25,7 +25,6 @@ class GamesViewController: UIViewController{
     let searchController = UISearchController()
     var isSmallCardGrid = false
     var heightConstraints: NSLayoutConstraint!
-    @IBOutlet weak var topConstraints: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
@@ -73,7 +72,6 @@ extension GamesViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 8, trailing: 16)
         section.interGroupSpacing = 12
-        
         section.orthogonalScrollingBehavior = .continuous
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
@@ -102,15 +100,9 @@ extension GamesViewController : UICollectionViewDelegate {
                 presenter.isSearching = false
             }
             else {
-            let selectedCell = platformsCollectionView.cellForItem(at: indexPath) as! ParentPlatformsCollectionViewCell
             if presenter.selectedIndex == indexPath.item{
-//                selectedCell.platformsBackgroundView.backgroundColor = UIColor(displayP3Red: 45/256, green: 45/256, blue: 45/256, alpha: 1.0)
-//                selectedCell.platformsTextLabel.textColor = .white
                 presenter.fetchMainGames()
-                
             }else {
-//                selectedCell.platformsBackgroundView.backgroundColor = .white
-//                selectedCell.platformsTextLabel.textColor = UIColor(displayP3Red: 45/256, green: 45/256, blue: 45/256, alpha: 1.0)
                 presenter.fetchWithFilter(query: "&parent_platforms=\(indexPath.item + 1)")
             }
             presenter.selectedIndex = indexPath.item
@@ -170,6 +162,7 @@ extension GamesViewController: UISearchBarDelegate {
         presenter.isSearching = true
         presenter.currentSearchQuery = "&search=\(searchBar.text!)"
         presenter.fetchWithSearch(query: "&search=\(searchBar.text!)")
+        searchController.isActive = false
     }
 }
 extension GamesViewController: GamesViewInterface {
@@ -265,7 +258,6 @@ extension GamesViewController: UIScrollViewDelegate {
                     heightConstraints.constant = 68 - offset
                 }
           }
-        print(heightConstraints.constant)
     }
 }
 

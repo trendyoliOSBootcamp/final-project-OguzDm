@@ -30,7 +30,6 @@ final class GameDetailPresenter {
         self.interactor.fetchGameDetail(with: self.id)
     }
 }
-
 extension GameDetailPresenter: GameDetailPresenterInterface {
     func wishListButtonTapped() {
         if UserDefaults.exists(key: "id") {
@@ -79,7 +78,7 @@ extension GameDetailPresenter: GameDetailPresenterInterface {
                 descriptions.append(String(game.playtime))
             }
             
-            if game.publishers != nil {
+            if game.publishers.count != 0{
                 var publisherString = ""
                 game.publishers.forEach({
                     if $0.name == game.publishers.last?.name {
@@ -92,9 +91,7 @@ extension GameDetailPresenter: GameDetailPresenterInterface {
             
             return (titles,descriptions)
         }
-        
         return([""],[""])
-
     }
     
     func viewDidLoad() {

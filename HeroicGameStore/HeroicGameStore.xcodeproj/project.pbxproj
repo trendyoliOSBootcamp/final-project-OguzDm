@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B91467CB266C475800025890 /* GamesPageTwo.json in Resources */ = {isa = PBXBuildFile; fileRef = B91467CA266C475800025890 /* GamesPageTwo.json */; };
 		B93479AC266599F700C30B71 /* HeroicGameStoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93479AB266599F700C30B71 /* HeroicGameStoreTabBarController.swift */; };
 		B93A53472667B32300DB8C78 /* ParentPlatformsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93A53452667B32300DB8C78 /* ParentPlatformsCollectionViewCell.swift */; };
 		B93A53482667B32300DB8C78 /* ParentPlatformsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93A53462667B32300DB8C78 /* ParentPlatformsCollectionViewCell.xib */; };
@@ -97,6 +98,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B91467CA266C475800025890 /* GamesPageTwo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GamesPageTwo.json; sourceTree = "<group>"; };
 		B93479AB266599F700C30B71 /* HeroicGameStoreTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroicGameStoreTabBarController.swift; sourceTree = "<group>"; };
 		B93A53452667B32300DB8C78 /* ParentPlatformsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentPlatformsCollectionViewCell.swift; sourceTree = "<group>"; };
 		B93A53462667B32300DB8C78 /* ParentPlatformsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentPlatformsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		B9453F7D266BA4EB00205A37 /* BigCardCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				B91467CA266C475800025890 /* GamesPageTwo.json */,
 				B9453F7E266BB46F00205A37 /* MainGamesCollectionViewCellPresenterTests.swift */,
 				B9453F80266BB49900205A37 /* MockMainGamesCollectionViewCell.swift */,
 			);
@@ -594,6 +597,7 @@
 				B94554F2266927FA00A9F6C2 /* Games.json in Resources */,
 				B9453F7C266B7DFD00205A37 /* result.json in Resources */,
 				B959BD13266AA27100EFB933 /* Game.json in Resources */,
+				B91467CB266C475800025890 /* GamesPageTwo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="120" height="59"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOR-d5-83Q">
-                                <rect key="frame" x="5" y="0.0" width="110" height="59"/>
+                                <rect key="frame" x="8" y="0.0" width="104" height="59"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -31,8 +31,8 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="MOR-d5-83Q" secondAttribute="bottom" id="9CS-bk-rg8"/>
                             <constraint firstItem="MOR-d5-83Q" firstAttribute="top" secondItem="obU-wd-1dX" secondAttribute="top" id="gXz-6l-Mef"/>
-                            <constraint firstItem="MOR-d5-83Q" firstAttribute="leading" secondItem="obU-wd-1dX" secondAttribute="leading" constant="5" id="j2U-1I-dV7"/>
-                            <constraint firstAttribute="trailing" secondItem="MOR-d5-83Q" secondAttribute="trailing" constant="5" id="yHE-GW-l9v"/>
+                            <constraint firstItem="MOR-d5-83Q" firstAttribute="leading" secondItem="obU-wd-1dX" secondAttribute="leading" constant="8" id="j2U-1I-dV7"/>
+                            <constraint firstAttribute="trailing" secondItem="MOR-d5-83Q" secondAttribute="trailing" constant="8" id="yHE-GW-l9v"/>
                         </constraints>
                     </view>
                 </subviews>

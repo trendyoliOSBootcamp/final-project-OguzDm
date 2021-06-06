@@ -68,5 +68,4 @@ extension GameDetailModel {
         print(homeResponse)
         return homeResponse
     }
-
 }

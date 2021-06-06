@@ -23,13 +23,11 @@ protocol GamesPresenterInterface {
     var isSearching: Bool {get set}
     var currentSearchQuery: String {get set}
 }
-
 extension GamesPresenter {
     fileprivate enum Constants {
         static let basePageURL = "https://api.rawg.io/api/games?key=3bcebfccf85d42b2aa562a5f52139179&page=1"
     }
 }
-
 final class GamesPresenter {
     weak var view: GamesViewInterface?
     private let interactor: GamesInteractorInterface
@@ -75,17 +73,14 @@ extension GamesPresenter : GamesPresenterInterface {
         games.removeAll()
         fetchGames(url: requestURL)
     }
-    
-
     func viewWilAppear() {
         view?.reloadGames()
     }
-    
     func fetchWithSearch(query: String) {
         games.removeAll()
         let tempQuery = query.split(separator: " ")
         var searchQuery = ""
-        tempQuery.map { searchQuery.append($0.description + "%20")}
+        _ = tempQuery.map { searchQuery.append($0.description + "%20")}
         print(searchQuery)
         fetchGames(url: "https://api.rawg.io/api/games?key=3bcebfccf85d42b2aa562a5f52139179&page=1\(searchQuery)")
     }
@@ -108,8 +103,6 @@ extension GamesPresenter : GamesPresenterInterface {
         checkUserDefault(game: game)
         self.router.navigateToVC(with: game.id)
     }
-    
-    
     func gameForIndex(_ index: Int) -> HeroicResult? {
         games[safe: index]
     }
@@ -140,7 +133,6 @@ extension GamesPresenter: GamesInteractorOutput {
             self.view?.reloadPlatforms()
         }
     }
-    
     func handleGamesResult(_ results: [HeroicResult], next: String) {
         games.append(contentsOf: results)
         if games.count == 0 {
@@ -149,8 +141,6 @@ extension GamesPresenter: GamesInteractorOutput {
         else {
             view?.removeFromSubViews()
             requestURL = next
-            print(requestURL)
-            print("count: \(games.last?.name)")
             DispatchQueue.main.async {
                 self.view?.reloadGames()
             }
