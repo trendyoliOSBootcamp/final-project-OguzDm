@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlatformsCollectionViewCell" id="gTV-IL-0wX" customClass="PlatformsCollectionViewCell" customModule="HeroicGameStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="106" height="36"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="106" height="36"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cd-3t-QyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="106" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="751" text="şilklşjşljlşjşkj" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btn-1D-0vL">
+                                <rect key="frame" x="5" y="0.0" width="96" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="btn-1D-0vL" firstAttribute="leading" secondItem="3cd-3t-QyQ" secondAttribute="leading" constant="5" id="Fh0-0o-ycH"/>
+                            <constraint firstItem="btn-1D-0vL" firstAttribute="top" secondItem="3cd-3t-QyQ" secondAttribute="top" id="HFi-tA-WRG"/>
+                            <constraint firstAttribute="bottom" secondItem="btn-1D-0vL" secondAttribute="bottom" id="Joc-3R-nxg"/>
+                            <constraint firstAttribute="trailing" secondItem="btn-1D-0vL" secondAttribute="trailing" constant="5" id="NQu-bs-UHL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="3cd-3t-QyQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Mmw-qU-7vb"/>
+                <constraint firstItem="3cd-3t-QyQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PXK-S1-JBh"/>
+                <constraint firstAttribute="trailing" secondItem="3cd-3t-QyQ" secondAttribute="trailing" id="WtG-29-dos"/>
+                <constraint firstAttribute="bottom" secondItem="3cd-3t-QyQ" secondAttribute="bottom" id="mPU-8v-auQ"/>
+            </constraints>
+            <size key="customSize" width="106" height="36"/>
+            <connections>
+                <outlet property="platformBackgroundView" destination="3cd-3t-QyQ" id="Xc0-k2-pSV"/>
+                <outlet property="platformLabel" destination="btn-1D-0vL" id="9Q6-KZ-E5N"/>
+            </connections>
+            <point key="canvasLocation" x="169.56521739130437" y="131.91964285714286"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
